@@ -36,7 +36,6 @@ script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera"]
 stream = ExtResource( 3 )
-autoplay = true
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="Camera"]
 script = ExtResource( 4 )
