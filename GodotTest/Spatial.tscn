@@ -22,10 +22,10 @@
 material = SubResource( 4 )
 size = Vector3( 10, 2, 10 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 5.5415, 1.91677, 4.61813 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=7]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -74,12 +74,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67637, -0.403616 )
 process_material = SubResource( 3 )
 draw_pass_1 = SubResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Ground"]
-shape = SubResource( 7 )
+[node name="Area" type="Area" parent="Ground"]
+space_override = 1
+gravity_point = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.06788, 0 )
+shape = SubResource( 6 )
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 input_capture_on_drag = true
 script = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
